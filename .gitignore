@@ -18,6 +18,27 @@
 *.zip
 *.tar.gz
 *.rar
+*.exe
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Ingnore Eclpise File For Commit
+.metadata
+.settings
+.project
+.classpath
+
+# Ingnore Idea File For Commit
+.idea
+*.iml
+*.iws
+*.ipr
+
+# Ingnore Package Install File For Commit
+*/target/
+*/*/target/
+
+# Ingnore Package Runing File For Commit
+*.log
+logs/
