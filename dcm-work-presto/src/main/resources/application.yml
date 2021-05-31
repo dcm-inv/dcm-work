@@ -11,10 +11,10 @@ spring:
       password: Manager@123
     slave:
       type: com.alibaba.druid.pool.DruidDataSource
-      url: jdbc:hive2://10.38.77.37:10000/ods_data_report
-      driver-class-name: org.apache.hive.jdbc.HiveDriver
-      username: hive
-      password: hive
+      url: jdbc:presto://10.38.77.37:8090/kudu/default
+      driver-class-name: com.facebook.presto.jdbc.PrestoDriver
+      username: root
+      password:
   druid:
     # Initializes The Connection Size
     initialSize: 5
@@ -36,7 +36,7 @@ spring:
     testOnBorrow: false
     # Return Checked (If True Affect Performance)
     testOnReturn: false
-    # PSCache£¬PSCache Cursor Setting (oracle Open & mysql Closed)
+    # PSCacheï¿½ï¿½PSCache Cursor Setting (oracle Open & mysql Closed)
     poolPreparedStatements: false
     # PoolPreparedStatements Connection Size Setting
     maxPoolPreparedStatementPerConnectionSize: 20
