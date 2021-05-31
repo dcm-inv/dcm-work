@@ -6,12 +6,12 @@ spring:
     master:
       type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://10.38.77.37:3306/data_report?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+      url: jdbc:mysql://10.38.77.XX:3306/data_report?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
       username: root
-      password: Manager@123
+      password: XXX
     slave:
       type: com.alibaba.druid.pool.DruidDataSource
-      url: jdbc:presto://10.38.77.37:8090/kudu/default
+      url: jdbc:presto://10.38.77.XX:8090/kudu/default
       driver-class-name: com.facebook.presto.jdbc.PrestoDriver
       username: root
       password:
