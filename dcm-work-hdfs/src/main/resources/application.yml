@@ -1,0 +1,52 @@
+server:
+  port: 8002
+
+spring:
+  datasource:
+    master:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://10.38.77.XX:3306/data_report?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+      username: root
+      password: XXX
+    slave:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:hive2://10.38.77.XX:10000/ods_data_report
+      driver-class-name: org.apache.hive.jdbc.HiveDriver
+      username: hive
+      password: XX
+  druid:
+    # Initializes The Connection Size
+    initialSize: 5
+    # Minimum Number Of Connection Pools
+    minIdle: 5
+    # Maximum Number Of Connection Pools
+    maxActive: 20
+    # Maximum Wait Time In Milliseconds For A Connection
+    maxWait: 60000
+    # Configuration Intervals Detect Idle Connections Closed In Milliseconds
+    timeBetweenEvictionRunsMillis: 60000
+    # Minimum Time In Milliseconds For A Connection To Survive In The Pool
+    minEvictableIdleTimeMillis: 300000
+    # Test Connection
+    validationQuery: SELECT 1
+    # Connection Guaranteed Safety Test(If True Not Affect Performance)
+    testWhileIdle: true
+    # Connection Checked (If True Affect Performance)
+    testOnBorrow: false
+    # Return Checked (If True Affect Performance)
+    testOnReturn: false
+    # PSCache��PSCache Cursor Setting (oracle Open & mysql Closed)
+    poolPreparedStatements: false
+    # PoolPreparedStatements Connection Size Setting
+    maxPoolPreparedStatementPerConnectionSize: 20
+    # Filters Setting
+    filters: stat
+    # Connection Properties Setting
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  hadoop:
+    fs-uri: hdfs://127.0.0.1:9000
+# Hadoop client
+hadoop:
+  name-node: hdfs://127.0.0.1:9000/
+  directory-path: /data
